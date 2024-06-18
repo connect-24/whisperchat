@@ -1,0 +1,72 @@
+:root {
+    --medium-blue: rgb(98, 114, 164);
+    --dark-blue: rgb(56, 61, 82);
+    --light-purple: rgb(63, 57, 93);
+    --dark-purple: rgb(36, 33, 53);
+    --dark-gray: rgb(32, 34, 43);
+    --lawn-green: rgb(80, 250, 123);
+    --sunset-orange: rgb(255, 85, 85);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--dark-blue);
+    background-image: linear-gradient(to bottom, var(--light-purple), var(--dark-purple));
+    transition: background-image 5s ease-in-out;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    padding: 20px;
+}
+
+p {
+    color: var(--sunset-orange);
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.reload-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px;
+    font-size: 1em;
+    background-color: var(--medium-blue);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.loading-text {
+    position: relative;
+    font-size: 3.5vh;
+    color: var(--dark-gray);
+}
+
+.loading-text::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--lawn-green);
+    border-right: 2px solid var(--lawn-green);
+    overflow: hidden;
+    animation: loadText 4s linear infinite;
+}
+
+@keyframes loadText {
+
+    0%,
+    10%,
+    100% {
+        width: 0%;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+}
