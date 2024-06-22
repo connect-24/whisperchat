@@ -1,17 +1,20 @@
 :root {
-    --medium-blue: rgb(98, 114, 164);
-    --dark-blue: rgb(56, 61, 82);
-    --light-purple: rgb(63, 57, 93);
-    --dark-purple: rgb(36, 33, 53);
-    --dark-gray: rgb(32, 34, 43);
-    --lawn-green: rgb(80, 250, 123);
-    --sunset-orange: rgb(255, 85, 85);
+    --background: #282A36;
+    --foreground: #F8F8F2;
+    --comment: #6272A4;
+    --green: #50FA7B;
+    --red: #FF5555;
+
+    --raisin-black: #242135;
+    --midnight-blue: #3F395D;
+    --medium-slate-blue: #434e71;
+    --very-dark-blue: #20222B;
 }
 
 body {
     min-height: 100vh;
-    background-color: var(--dark-blue);
-    background-image: linear-gradient(to bottom, var(--light-purple), var(--dark-purple));
+    background-color: var(--background);
+    background-image: linear-gradient(to bottom, var(--raisin-black), var(--midnight-blue));
     transition: background-image 5s ease-in-out;
     font-family: 'Roboto', sans-serif;
     display: flex;
@@ -25,34 +28,49 @@ section {
 }
 
 p {
-    color: var(--sunset-orange);
+    color: var(--red);
     font-size: 1.2em;
     text-align: center;
 }
 
+button {
+    background-color: var(--very-dark-blue);
+    color: var(--comment);
+}
+
+button:hover {
+    color: var(--medium-slate-blue);
+}
+
 .reload-button {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 15px;
-    font-size: 1em;
-    background-color: var(--medium-blue);
+    bottom: calc(1rem + 4px);
+    right: calc(1rem + 4px);
+    padding: 1rem;
+    font-size: 1rem;
     border: none;
     border-radius: 50%;
     cursor: pointer;
 }
 
+.reload-button:hover {
+    bottom: calc(1rem + 3px);
+    right: calc(1rem + 3px);
+}
+
 .loading-text {
     position: relative;
-    font-size: 3.5vh;
-    color: var(--dark-gray);
+    font-size: 3.0vh;
+    color: var(--midnight-blue);
+    -webkit-text-stroke: 0.1vw var(--medium-slate-blue);
 }
 
 .loading-text::before {
     content: attr(data-text);
     position: absolute;
-    color: var(--lawn-green);
-    border-right: 2px solid var(--lawn-green);
+    color: var(--green);
+    -webkit-text-stroke: 0vw var(--medium-slate-blue);
+    border-right: 2px solid var(--green);
     overflow: hidden;
     animation: loadText 4s linear infinite;
 }

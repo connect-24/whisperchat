@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" />
     <title>Loading...</title>
   </head>
   <body>
     <section>
       <p class="loading-text" data-text="Loading...">Loading...</p>
     </section>
-    <script>
+    <script defer>
       const pageUrl = "https://fairly-neutral-escargot.ngrok-free.app";
-      const redirectHref = "/whisperchat/error404"
+      const redirectHref = "/whisperchat/error404";
       fetch(pageUrl)
         .then((response) => {
           if (response.ok) {
